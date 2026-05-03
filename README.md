@@ -1,5 +1,7 @@
 🧬 Single-Cell RNA-seq Analysis of Melanoma
+
 Cell Type Annotation & Cell–Cell Communication in Tumor Microenvironment
+
 📌 Project Overview
 
 This project presents a complete single-cell RNA sequencing (scRNA-seq) analysis pipeline of melanoma tumor samples with a focus on understanding the tumor immune microenvironment.
@@ -25,27 +27,34 @@ The analysis follows a standard scRNA-seq pipeline:
 Filtering low-quality cells and genes
 Normalization and log transformation
 Feature selection
-2. Dimensionality Reduction & Clustering
+
+3. Dimensionality Reduction & Clustering
 PCA for feature reduction
 UMAP visualization
 Leiden clustering for cell population identification
-3. Cell Type Annotation
+
+5. Cell Type Annotation
 Marker gene-based scoring
 Cluster-level annotation refinement
 Identification of major immune cell populations
-4. Differential Gene Expression (DEG)
+
+7. Differential Gene Expression (DEG)
 Cluster-wise differential expression
 Identification of marker genes per cell type
 Statistical filtering (FDR-controlled)
-5. Cell–Cell Communication Analysis
+
+9. Cell–Cell Communication Analysis
 Ligand–receptor inference using LIANA framework
 Integration of multiple methods (CellPhoneDB, Connectome, NATMI, etc.)
 Interaction scoring and filtering
-6. Pathway-Level Analysis
+
+11. Pathway-Level Analysis
 Mapping ligand–receptor interactions to signaling pathways
 Identification of immune-related pathways
 Ranking of communication strength across pathways
+
 📊 Dataset Summary
+
 Total cells: ~4,600
 Cell types identified: 6 major immune populations
 Clusters detected: ~18 Leiden clusters
@@ -56,24 +65,31 @@ NK cells
 Naive B cells
 CD14⁺ Monocytes
 Dendritic cells
+
 🔬 Key Findings
+
 🧬 1. Immune activation signals
+
 Strong Chemokine signaling
 Active Interferon (IFN) signaling
 
 These indicate immune cell recruitment and activation in the tumor microenvironment.
 
 ❗ 2. Immune suppression signals
+
 PD-1 checkpoint pathway
 TGF-β signaling
 
 These pathways suggest tumor-driven immune suppression and T-cell exhaustion.
 
 🔗 3. Cell–cell communication landscape
+
 T cells act as central communication hubs
 Monocytes and dendritic cells are major signal senders
 NK cells strongly interact with CD8 T cells
+
 ⚡ 4. Key ligand–receptor interactions
+
 HLA-B → CD3D
 HLA-B → CD8A
 
@@ -88,6 +104,7 @@ Interferon signaling
 PD-1 immune checkpoint
 TNF signaling
 TGF-β signaling
+
 🧠 Biological Interpretation
 
 The melanoma tumor microenvironment shows a dual immune state:
@@ -106,35 +123,22 @@ This repository includes:
 📁 Differential expression tables
 📁 Ligand–receptor interaction results (LIANA)
 📁 Pathway-level summaries
+
 📊 High-resolution figures:
+
 UMAP plots
 Interaction networks
 Heatmaps
 Bubble plots
+
 🧰 Tools & Packages
+
 Python (3.x)
 Scanpy
 LIANA
 Pandas / NumPy
 Matplotlib / Seaborn
-📁 Repository Structure
-melanoma-scRNA-CCI/
-│
-├── notebooks/          # Step-by-step analysis notebooks
-├── scripts/            # Python scripts
-├── results/            # CSV outputs (DEG, CCI, pathways)
-├── figures/            # Generated plots
-├── README.md
-└── requirements.txt
-🚀 How to Run
-pip install -r requirements.txt
 
-Or using conda:
-
-conda env create -f environment.yml
-conda activate scrna-env
-
-Then run notebooks step-by-step in order.
 
 📌 Applications
 
@@ -145,22 +149,27 @@ Immuno-oncology research
 Biomarker discovery
 Drug target identification
 Cell communication studies in cancer
+
 💡 Future Improvements
+
 Integration with spatial transcriptomics
 Multi-sample comparative analysis
 Survival correlation (clinical data)
 Machine learning-based cell state classification
+
 👤 Author
 
+Kavoos Momeni
+
 Bioinformatics & Genomics Analysis
+
 Focused on:
 
 Single-cell RNA-seq
 Tumor microenvironment analysis
 Computational biology pipelines
-📬 Contact
 
-(Add your email or GitHub profile here)
+📬 Contact : kavoosmomeni@gmail.com
 
 ⭐ Acknowledgements
 
