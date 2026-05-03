@@ -1,0 +1,44 @@
+meta:
+  dataset_type: skin
+  organism: human
+  tissue: skin
+
+random_seed: 0
+
+qc:
+  min_genes_per_cell: 300
+  max_genes_per_cell: 6000
+  max_pct_mt: 10
+  min_cells_per_gene: 3
+
+analysis:
+  n_top_hvgs: 3000
+  n_pcs: 50
+  neighbor_k: 20
+  leiden_resolution: 0.7
+
+annotation:
+  reference_markers:
+
+    Keratinocytes: ["KRT14","KRT5"]
+
+    Differentiated_keratinocytes: ["KRT1","KRT10"]
+
+    Melanocytes: ["PMEL","MLANA","MITF"]
+
+    Fibroblasts: ["COL1A1","COL1A2"]
+
+    Endothelial: ["PECAM1","VWF"]
+
+    T_cells: ["CD3D","CD3E"]
+
+    Langerhans_cells: ["CD207","CD1A"]
+
+visualization:
+  umap_marker_genes:
+    - KRT14
+    - KRT10
+    - PMEL
+    - COL1A1
+    - PECAM1
+    - CD3D

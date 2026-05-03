@@ -1,0 +1,79 @@
+meta:
+  dataset_type: tumor_pbmc
+  organism: human
+  tissue: blood_monocytes
+
+random_seed: 0
+
+multi_resolutions:
+  - 0.3
+  - 0.5
+  - 0.8
+  - 1.0
+
+rank_genes_method: wilcoxon
+cluster_key: leiden
+
+
+qc:
+  min_genes_per_cell: 500
+  max_genes_per_cell: 7000
+  max_pct_mt: 15.0
+  min_cells_per_gene: 3
+
+
+analysis:
+  n_top_hvgs: 2000
+  n_pcs: 40
+  neighbor_k: 15
+  leiden_resolution: 0.6
+
+
+annotation:
+  reference_markers:
+
+    CD4_T:
+      - CD3D
+      - CD4
+      - IL7R
+      - CCR7
+
+    CD8_T:
+      - CD3D
+      - CD8A
+      - GZMB
+
+    NK_cells:
+      - NKG7
+      - GNLY
+      - PRF1
+
+    Naive_B:
+      - MS4A1
+      - CD79A
+
+    Monocytes_CD14:
+      - LYZ
+      - S100A8
+      - S100A9
+
+    Monocytes_FCGR3A:
+      - FCGR3A
+      - MS4A7
+
+    Dendritic_cells:
+      - FCER1A
+      - CLEC10A
+
+
+visualization:
+  umap_marker_genes:
+    - CD3D
+    - CD4
+    - CD8A
+    - MS4A1
+    - NKG7
+    - GNLY
+    - LYZ
+    - FCGR3A
+    - FCER1A

@@ -1,0 +1,98 @@
+# configs/enrichment.yaml
+# =======================
+# تنظیمات کلی Enrichment (GO / KEGG / GSEA)
+# این فایل مستقل از YAMLهای بافتی (pbmc.yaml و ...) است و فقط
+# برای نوت‌بوک GO/KEGG/GSEA استفاده می‌شود.
+
+# -----------------------
+# پروفایل پیش‌فرض پروژه
+# -----------------------
+# این کلید تعیین می‌کند تنظیمات کدام ارگانیسم به عنوان پیش‌فرض
+# برای نوت‌بوک‌ها استفاده شود.
+default_profile: human
+
+# -----------------------
+# تنظیمات برای هر ارگانیسم
+# -----------------------
+organisms:
+
+  # ======= Human =======
+  human:
+    organism_name: "Human"     # برای پاس‌دادن به gseapy / Enrichr
+    species_code: "hsapiens"   # اگر در جاهای دیگر لازم شد
+    description: "Default human enrichment profile (Homo sapiens)."
+
+    enrichment:
+      # آستانه‌ی p-value کلی برای فیلتر نتایج
+      pval_thresh: 0.05
+
+      # تعداد ژن‌های برتر (مثلاً بر اساس pvals_adj) در هر گروه
+      # که برای enrichment استفاده می‌شوند.
+      top_n_genes: 100
+
+      # -------------------
+      # GO (Enrichr / GSEA)
+      # -------------------
+      go:
+        # لیست کتابخانه‌های GO در Enrichr / gseapy
+        gene_sets:
+          - "GO_Biological_Process_2021"
+          - "GO_Molecular_Function_2021"
+          - "GO_Cellular_Component_2021"
+
+      # -------------------
+      # KEGG
+      # -------------------
+      kegg:
+        gene_sets:
+          - "KEGG_2021_Human"
+
+      # -------------------
+      # GSEA (MSigDB و غیره)
+      # -------------------
+      gsea:
+        # مثال: Hallmark و مجموعه‌ی C2 canonical pathways
+        gene_sets:
+          - "MSigDB_Hallmark_2020"
+          - "MSigDB_C2_CP_2020"
+
+    # تنظیمات پیش‌فرض Visualization برای Human
+    visualization:
+      go_top_terms: 20      # تعداد ترم‌های برتر GO در barplot
+      kegg_top_terms: 20    # تعداد ترم‌های برتر KEGG
+      gsea_top_terms: 20    # تعداد ترم‌های برتر GSEA
+      # اگر خواستید می‌توانید برای dotplot هم کلید جدا بگذارید، مثلاً:
+      # go_top_terms_dotplot: 30
+      # ...
+
+  # ======= Mouse =======
+  mouse:
+    organism_name: "Mouse"
+    species_code: "mmusculus"
+    description: "Mouse enrichment profile (Mus musculus)."
+
+    enrichment:
+      # اگر لازم بود می‌توانید p-value و top_n را برای Mouse متفاوت بگذارید
+      pval_thresh: 0.05
+      top_n_genes: 100
+
+      go:
+        gene_sets:
+          - "GO_Biological_Process_2021"
+          - "GO_Molecular_Function_2021"
+          - "GO_Cellular_Component_2021"
+
+      kegg:
+        gene_sets:
+          - "KEGG_2021_Mouse"
+
+      gsea:
+        # اگر برای Mouse کتابخانه‌ی خاصی دارید اینجا بگذارید
+        gene_sets:
+          - "MSigDB_Hallmark_2020"
+          - "MSigDB_C2_CP_2020"
+
+    visualization:
+      go_top_terms: 20
+      kegg_top_terms: 20
+      gsea_top_terms: 20

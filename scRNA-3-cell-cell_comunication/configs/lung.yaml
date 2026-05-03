@@ -1,0 +1,46 @@
+meta:
+  dataset_type: lung
+  organism: human
+  tissue: lung
+
+random_seed: 0
+
+qc:
+  min_genes_per_cell: 400
+  max_genes_per_cell: 7000
+  max_pct_mt: 12
+  min_cells_per_gene: 3
+
+analysis:
+  n_top_hvgs: 3000
+  n_pcs: 50
+  neighbor_k: 20
+  leiden_resolution: 0.6
+
+annotation:
+  reference_markers:
+
+    AT2_cells: ["SFTPC","SFTPA1","SFTPB"]
+    AT1_cells: ["AGER","PDPN"]
+    Club_cells: ["SCGB1A1"]
+    Ciliated_cells: ["FOXJ1","PIFO"]
+    Basal_cells: ["KRT5","KRT14"]
+    Endothelial: ["PECAM1","VWF"]
+    Fibroblasts: ["COL1A1","DCN"]
+    Alveolar_macrophages: ["MARCO","MSR1","LYZ"]
+    T_cells: ["CD3D","TRAC"]
+    B_cells: ["MS4A1","CD79A"]
+    NK_cells: ["NKG7"]
+    Dendritic_cells: ["FCER1A"]
+
+visualization:
+  umap_marker_genes:
+    - SFTPC
+    - AGER
+    - SCGB1A1
+    - FOXJ1
+    - KRT5
+    - PECAM1
+    - COL1A1
+    - MARCO
+    - CD3D

@@ -1,0 +1,5 @@
+samples:
+  GSM8093095_healthy1: healthy
+  GSM8093097_healthy2: healthy
+  GSM8093096_patient1: melanoma
+  GSM8093098_patient2: melanoma

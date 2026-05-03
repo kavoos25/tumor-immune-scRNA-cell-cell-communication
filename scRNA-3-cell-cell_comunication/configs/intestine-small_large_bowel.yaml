@@ -1,0 +1,44 @@
+meta:
+  dataset_type: intestine
+  organism: human
+  tissue: intestine
+
+random_seed: 0
+
+qc:
+  min_genes_per_cell: 400
+  max_genes_per_cell: 7000
+  max_pct_mt: 12
+  min_cells_per_gene: 3
+
+analysis:
+  n_top_hvgs: 3000
+  n_pcs: 50
+  neighbor_k: 20
+  leiden_resolution: 0.7
+
+annotation:
+  reference_markers:
+
+    Enterocytes: ["ALPI","APOA1","FABP2"]
+    Goblet_cells: ["MUC2","SPDEF"]
+    Paneth_cells: ["LYZ","DEFA5","DEFA6"]
+    Enteroendocrine_cells: ["CHGA","TPH1"]
+    Stem_TA_cells: ["LGR5","MKI67"]
+    Tuft_cells: ["POU2F3","TRPM5"]
+    Stromal_fibroblasts: ["COL1A1","PDGFRA"]
+    Endothelial: ["PECAM1","VWF"]
+    T_cells: ["CD3D"]
+    B_cells: ["MS4A1"]
+    Myeloid: ["LYZ","S100A8","S100A9"]
+
+visualization:
+  umap_marker_genes:
+    - ALPI
+    - MUC2
+    - LYZ
+    - CHGA
+    - LGR5
+    - COL1A1
+    - PECAM1
+    - CD3D

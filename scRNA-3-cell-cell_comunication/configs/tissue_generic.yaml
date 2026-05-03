@@ -1,0 +1,51 @@
+meta:
+  dataset_type: tissue_generic
+  organism: human
+  tissue: unknown
+
+random_seed: 0
+
+qc:
+  # تنظیمات محافظه‌کارانه و نسبتاً عمومی
+  min_genes_per_cell: 300
+  max_genes_per_cell: 7000
+  max_pct_mt: 12
+  min_cells_per_gene: 3
+
+analysis:
+  n_top_hvgs: 3000
+  n_pcs: 50
+  neighbor_k: 20
+  leiden_resolution: 0.6
+
+annotation:
+  reference_markers:
+
+    Proliferating_cells: ["MKI67","TOP2A"]
+    Epithelial_cells: ["KRT8","KRT18","KRT19","EPCAM"]
+    Stromal_fibroblasts: ["COL1A1","COL3A1","DCN"]
+    Endothelial_cells: ["PECAM1","VWF","KDR"]
+    Pericytes_SMC: ["PDGFRB","RGS5","ACTA2"]
+    T_cells: ["CD3D","CD3E","TRAC"]
+    CD4_T: ["CD4"]
+    CD8_T: ["CD8A","CD8B"]
+    NK_cells: ["NKG7","GNLY"]
+    B_cells: ["MS4A1","CD79A"]
+    Plasma_cells: ["MZB1","JCHAIN"]
+    Myeloid_monocytes: ["LYZ","S100A8","S100A9"]
+    Macrophages: ["CD68","CD163"]
+    Dendritic_cells: ["FCER1A","LILRA4"]
+
+visualization:
+  umap_marker_genes:
+    - EPCAM
+    - KRT8
+    - COL1A1
+    - PECAM1
+    - PDGFRB
+    - CD4
+    - CD8A
+    - NKG7
+    - MS4A1
+    - LYZ
+    - MKI67

@@ -1,0 +1,46 @@
+meta:
+  dataset_type: tumor
+  organism: human
+  tissue: tumor
+
+random_seed: 0
+
+qc:
+  min_genes_per_cell: 500
+  max_genes_per_cell: 8000
+  max_pct_mt: 15
+  min_cells_per_gene: 3
+
+analysis:
+  n_top_hvgs: 3000
+  n_pcs: 50
+  neighbor_k: 20
+  leiden_resolution: 0.7
+
+annotation:
+  reference_markers:
+
+    Malignant_epithelial: ["EPCAM","KRT8","KRT18","KRT19"]
+    CAFs: ["COL1A1","COL3A1","ACTA2"]
+    Endothelial: ["PECAM1","VWF"]
+    Pericytes: ["PDGFRB","RGS5"]
+    CD4_T: ["CD3D","CD4"]
+    CD8_T: ["CD3D","CD8A","GZMB"]
+    Tregs: ["FOXP3","IL2RA"]
+    B_cells: ["MS4A1","CD79A"]
+    Plasma_cells: ["MZB1","JCHAIN"]
+    NK_cells: ["NKG7","GNLY"]
+    Myeloid: ["LYZ","S100A8","S100A9"]
+    Dendritic_cells: ["FCER1A","LILRA4"]
+
+visualization:
+  umap_marker_genes:
+    - EPCAM
+    - KRT8
+    - COL1A1
+    - PECAM1
+    - CD4
+    - CD8A
+    - NKG7
+    - LYZ
+    - FOXP3
