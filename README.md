@@ -1,176 +1,175 @@
-🧬 Single-Cell RNA-seq Analysis of Melanoma
+# 🧬 Single-Cell RNA-seq Analysis of Melanoma Tumor Microenvironment  
+### Cell–Cell Communication & Immune Signaling Landscape
 
-Cell Type Annotation & Cell–Cell Communication in Tumor Microenvironment
+---
 
-📌 Project Overview
+## 🎯 Project Summary
 
-This project presents a complete single-cell RNA sequencing (scRNA-seq) analysis pipeline of melanoma tumor samples with a focus on understanding the tumor immune microenvironment.
+Tumor progression in melanoma is critically shaped by complex interactions between immune and tumor cells within the tumor microenvironment.
 
-The workflow integrates:
+In this project, I performed a comprehensive single-cell RNA-seq analysis to characterize cellular composition, infer cell–cell communication networks, and identify dominant signaling pathways driving immune activation and suppression.
 
-Cell type identification and annotation
-Differential gene expression analysis
-Ligand–receptor-based cell–cell communication inference
-Pathway-level signaling interpretation
+Using ligand–receptor-based interaction modeling, this study reveals a dual immune landscape where active immune signaling coexists with strong immunosuppressive mechanisms.
 
-The goal is to uncover how immune and tumor cells interact and how signaling pathways contribute to immune activation and immune suppression.
+---
 
-🧪 Biological Question
+## 🧪 Biological Question
 
-How do immune cells and tumor cells communicate in the melanoma microenvironment, and which signaling pathways dominate this interaction?
+How do immune and tumor cells communicate in the melanoma microenvironment, and which signaling pathways govern immune activation versus immune suppression?
 
-⚙️ Workflow Summary
+---
 
-The analysis follows a standard scRNA-seq pipeline:
+## 🔬 Analytical Strategy
 
-1. Quality Control & Preprocessing
-Filtering low-quality cells and genes
-Normalization and log transformation
-Feature selection
+The workflow integrates multiple layers of analysis:
 
-3. Dimensionality Reduction & Clustering
-PCA for feature reduction
-UMAP visualization
-Leiden clustering for cell population identification
+- Identification of cell populations through clustering and marker-based annotation  
+- Differential gene expression to define cell-type-specific signatures  
+- Ligand–receptor interaction inference using the LIANA framework  
+- Integration of multiple communication inference methods  
+- Pathway-level mapping of intercellular signaling  
 
-5. Cell Type Annotation
-Marker gene-based scoring
-Cluster-level annotation refinement
-Identification of major immune cell populations
+---
 
-7. Differential Gene Expression (DEG)
-Cluster-wise differential expression
-Identification of marker genes per cell type
-Statistical filtering (FDR-controlled)
+## 📊 Dataset Overview
 
-9. Cell–Cell Communication Analysis
-Ligand–receptor inference using LIANA framework
-Integration of multiple methods (CellPhoneDB, Connectome, NATMI, etc.)
-Interaction scoring and filtering
+- ~4,600 cells analyzed  
+- ~18 clusters identified (Leiden clustering)  
+- 6 major immune cell populations:
+  - CD4⁺ T cells  
+  - CD8⁺ T cells  
+  - NK cells  
+  - Naive B cells  
+  - CD14⁺ Monocytes  
+  - Dendritic cells  
 
-11. Pathway-Level Analysis
-Mapping ligand–receptor interactions to signaling pathways
-Identification of immune-related pathways
-Ranking of communication strength across pathways
+---
 
-📊 Dataset Summary
+## 🔬 Key Findings
 
-Total cells: ~4,600
-Cell types identified: 6 major immune populations
-Clusters detected: ~18 Leiden clusters
-Identified cell types:
-CD4⁺ T cells
-CD8⁺ T cells
-NK cells
-Naive B cells
-CD14⁺ Monocytes
-Dendritic cells
+### 🧬 1. Active immune signaling
 
-🔬 Key Findings
+- Strong **chemokine signaling** indicating immune cell recruitment  
+- Prominent **interferon (IFN) signaling**, suggesting immune activation  
 
-🧬 1. Immune activation signals
+---
 
-Strong Chemokine signaling
-Active Interferon (IFN) signaling
+### ❗ 2. Immunosuppressive mechanisms
 
-These indicate immune cell recruitment and activation in the tumor microenvironment.
+- Activation of **PD-1 checkpoint pathway**  
+- Enrichment of **TGF-β signaling**  
 
-❗ 2. Immune suppression signals
+These results indicate tumor-driven suppression of effective immune responses.
 
-PD-1 checkpoint pathway
-TGF-β signaling
+---
 
-These pathways suggest tumor-driven immune suppression and T-cell exhaustion.
+### 🔗 3. Communication network structure
 
-🔗 3. Cell–cell communication landscape
+- T cells act as central hubs in the communication network  
+- Monocytes and dendritic cells function as major signal senders  
+- NK cells show strong interaction with CD8⁺ T cells  
 
-T cells act as central communication hubs
-Monocytes and dendritic cells are major signal senders
-NK cells strongly interact with CD8 T cells
+---
 
-⚡ 4. Key ligand–receptor interactions
+### ⚡ 4. Key ligand–receptor interactions
 
-HLA-B → CD3D
-HLA-B → CD8A
+- HLA-B → CD3D  
+- HLA-B → CD8A  
 
-Indicating strong antigen presentation and immune recognition signals.
+These interactions highlight active antigen presentation and immune recognition processes.
 
-📈 Pathway-Level Insights
+---
 
-Top enriched communication pathways:
+## 📈 Pathway-Level Insights
 
-Chemokine signaling
-Interferon signaling
-PD-1 immune checkpoint
-TNF signaling
-TGF-β signaling
+Dominant signaling pathways shaping the tumor microenvironment:
 
-🧠 Biological Interpretation
+- Chemokine signaling  
+- Interferon signaling  
+- PD-1 immune checkpoint  
+- TNF signaling  
+- TGF-β signaling  
 
-The melanoma tumor microenvironment shows a dual immune state:
+---
 
-Active immune response (IFN and chemokine signaling)
-Simultaneous immune suppression (PD-1 and TGF-β pathways)
+## 🧠 Biological Interpretation
 
-This suggests that while immune cells are recruited and active, tumor-mediated checkpoint signaling likely inhibits effective anti-tumor immunity.
+The melanoma tumor microenvironment exhibits a **dual immune state**:
 
-📊 Key Outputs
+- Active immune recruitment and signaling  
+- Simultaneous checkpoint-mediated immune suppression  
 
-This repository includes:
+This suggests that despite immune activation, tumor-driven inhibitory pathways limit effective anti-tumor responses.
 
-📁 Clustering results (Leiden)
-📁 Cell type annotations
-📁 Differential expression tables
-📁 Ligand–receptor interaction results (LIANA)
-📁 Pathway-level summaries
+---
 
-📊 High-resolution figures:
+## 🚀 Key Contributions
 
-UMAP plots
-Interaction networks
-Heatmaps
-Bubble plots
+- Developed a reproducible scRNA-seq workflow for tumor microenvironment analysis  
+- Integrated multi-method ligand–receptor inference using LIANA  
+- Identified coordinated immune activation and suppression mechanisms  
+- Performed pathway-level interpretation of intercellular signaling  
+- Generated publication-quality visualizations  
 
-🧰 Tools & Packages
+---
 
-Python (3.x)
-Scanpy
-LIANA
-Pandas / NumPy
-Matplotlib / Seaborn
+## 📊 Outputs
 
+- Cell clustering and annotation  
+- Differential expression results  
+- Ligand–receptor interaction networks  
+- Pathway-level signaling summaries  
 
-📌 Applications
+📈 Figures include:
 
-This pipeline can be used for:
+- UMAP visualizations  
+- Interaction networks  
+- Heatmaps  
+- Bubble plots  
 
-Tumor microenvironment studies
-Immuno-oncology research
-Biomarker discovery
-Drug target identification
-Cell communication studies in cancer
+---
 
-💡 Future Improvements
+## ⚙️ Reproducibility
 
-Integration with spatial transcriptomics
-Multi-sample comparative analysis
-Survival correlation (clinical data)
-Machine learning-based cell state classification
+- Modular and reusable pipeline  
+- Compatible with diverse scRNA-seq datasets  
+- Designed for scalable and reproducible analysis  
 
-👤 Author
+---
 
-Kavoos Momeni
+## 💡 Applications
 
-Bioinformatics & Genomics Analysis
+This workflow can be applied to:
 
-Focused on:
+- Tumor microenvironment studies  
+- Immuno-oncology research  
+- Biomarker discovery  
+- Drug target identification  
+- Cell–cell communication analysis  
 
-Single-cell RNA-seq
-Tumor microenvironment analysis
-Computational biology pipelines
+---
 
-📬 Contact : kavoosmomeni@gmail.com
+## 🧠 Author Perspective
 
-⭐ Acknowledgements
+With a background in molecular genetics, clinical laboratory work, and bioinformatics, this project reflects an integrated approach combining biological interpretation with computational rigor.
 
-This project uses open-source tools including Scanpy and LIANA for single-cell and communication analysis.
+---
+
+## 🎓 Research & Collaboration
+
+I am actively seeking:
+
+- Postdoctoral research opportunities  
+- Research collaborations  
+- Bioinformatics and data analysis projects  
+
+---
+
+## 📬 Contact
+
+**Kavoos Momeni**  
+PhD in Molecular Genetics  
+
+Email: kavoosmomeni@gmail.com  
+
+---
